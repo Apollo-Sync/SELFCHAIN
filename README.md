@@ -8,14 +8,13 @@ Twitter: https://twitter.com/selfchainxyz
 Discord: https://discord.com/invite/selfchainxyz?ref=blog.selfchain.xyz
 
 
-## **Building from source**
-
+**Building from source**
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop lz4 screen unzip bc fail2ban htop -y
 ```
-## **INSTALL GO**
 
+**INSTALL GO**
 ```
 cd $HOME
 VER="1.20.5"
@@ -28,7 +27,8 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
-## **Download and install binary**
+
+**Download and install binary**
 
 ```
 cd $HOME

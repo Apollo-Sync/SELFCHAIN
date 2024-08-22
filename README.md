@@ -35,14 +35,16 @@ cd $HOME
 wget https://ss-t.selfchain.nodestake.org/selfchaind
 chmod +x selfchaind
 ```
+
+**Setup Cosmovisor Symlinks**
 ```
-# Setup Cosmovisor Symlinks
 mkdir -p $HOME/.selfchain/cosmovisor/genesis/bin
 mv selfchaind $HOME/.selfchain/cosmovisor/genesis/bin/
 
+
 sudo ln -s $HOME/.selfchain/cosmovisor/genesis $HOME/.selfchain/cosmovisor/current
 sudo ln -s $HOME/.selfchain/cosmovisor/current/bin/selfchaind /usr/local/bin/selfchaind
-
+```
 
 # Set Configuration for your node
 selfchaind config chain-id self-dev-1

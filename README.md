@@ -46,16 +46,17 @@ sudo ln -s $HOME/.selfchain/cosmovisor/genesis $HOME/.selfchain/cosmovisor/curre
 sudo ln -s $HOME/.selfchain/cosmovisor/current/bin/selfchaind /usr/local/bin/selfchaind
 ```
 
-# Set Configuration for your node
+**Set Configuration for your node**
+```
 selfchaind config chain-id self-dev-1
 selfchaind config keyring-backend test
 ```
+
+**Init your node**
 ```
-# Init your node
-# You can change "MyNode" to anything you like
 selfchaind init MyNode --chain-id self-dev-1
 ```
-```
+
 # Add Genesis File and Addrbook
 wget -O $HOME/.selfchain/config/genesis.json  https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json
 curl -Ls https://snapshots.indonode.net/selfchain/addrbook.json > $HOME/.selfchain/config/addrbook.json

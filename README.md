@@ -58,7 +58,7 @@ selfchaind init MyNode --chain-id self-dev-1
 ```
 
 **Add Genesis File and Addrbook**
-``
+```
 wget -O $HOME/.selfchain/config/genesis.json  https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json
 curl -Ls https://snapshots.indonode.net/selfchain/addrbook.json > $HOME/.selfchain/config/addrbook.json
 ```
@@ -73,7 +73,8 @@ PEERS="$(curl -sS http://157.230.119.165:26657/net_info | jq -r '.result.peers[]
 sed -i -e "s|^persistent_peers *=.*|persistent_peers = \"$PEERS\"|" $HOME/.selfchain/config/config.toml
 ```
 
-# Set Pruning, Enable Prometheus, Gas Price, and Indexer
+**Set Pruning, Enable Prometheus, Gas Price, and Indexer**
+```
 PRUNING="custom"
 PRUNING_KEEP_RECENT="100"
 PRUNING_INTERVAL="19"
@@ -87,7 +88,8 @@ sed -i -e 's|^indexer *=.*|indexer = "null"|' $HOME/.selfchain/config/config.tom
 sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.selfchain/config/config.toml
 sed -i -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.005uself\"/" $HOME/.selfchain/config/app.toml
 ```
-## **Port switching**
+
+**Port switching**
 ```
 echo "export SELF_PORT="42"" >> $HOME/.bash_profile
 source $HOME/.bash_profile

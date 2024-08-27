@@ -115,12 +115,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${SELF_PORT
 s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":${SELF_PORT}660\"%" $HOME/.selfchain/config/config.toml
 ```
 
-# Set Service file
+**Set Service file**
+```
 sudo tee /etc/systemd/system/selfchaind.service > /dev/null << EOF
 [Unit]
 Description=selfchaind testnet node service
 After=network-online.target
-
 [Service]
 User=$USER
 ExecStart=$(which cosmovisor) run start
@@ -137,7 +137,8 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable selfchaind
 ```
-```
+
+
 # Start the Node
 sudo systemctl restart selfchaind
 sudo journalctl -fu selfchaind -o cat

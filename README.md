@@ -139,12 +139,13 @@ sudo systemctl enable selfchaind
 ```
 
 
-# Start the Node
+**Start the Node**
+```
 sudo systemctl restart selfchaind
 sudo journalctl -fu selfchaind -o cat
 ```
 
-## **Check sync status**
+**Check sync status**
 False is synced
 ```
 selfchaind status 2>&1 | jq .SyncInfo.catching_up

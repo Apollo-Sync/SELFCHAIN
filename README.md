@@ -59,8 +59,8 @@ selfchaind init MyNode --chain-id self-dev-1
 
 **Add Genesis File and Addrbook**
 ```
-wget -O $HOME/.selfchain/config/genesis.json  https://raw.githubusercontent.com/hotcrosscom/selfchain-genesis/main/networks/devnet/genesis.json
-curl -Ls https://raw.githubusercontent.com/Apollo-Sync/SELFCHAIN/main/addrbook.json > $HOME/.selfchain/config/addrbook.json
+wget -O $HOME/.selfchain/config/genesis.json  https://raw.githubusercontent.com/Apollo-Sync/SELFCHAIN/refs/heads/main/genesis.json
+curl -Ls https://raw.githubusercontent.com/Apollo-Sync/SELFCHAIN/refs/heads/main/addrbook.json > $HOME/.selfchain/config/addrbook.json
 ```
 
 **Configure Seeds and Peers**
